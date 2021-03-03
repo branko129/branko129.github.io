@@ -27,4 +27,11 @@ node {
             app.push("latest")
         }
     }
+   
+  stage('Deploy to k8') {
+      
+        withKubeConfig([credentialsId: 'k8', serverUrl: 'https://192.168.9.55:6443']) {
+        sh 'kubectl apply -f k8.yaml'
+    }
+  }
 }

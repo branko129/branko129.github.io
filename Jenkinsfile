@@ -30,7 +30,7 @@ node {
    
   stage('Deploy to k8') {
       
-        withKubeConfig([credentialsId: 'k8s', serverUrl: 'https://192.168.9.55:6443']) {
+        withKubeConfig([credentialsId: 'k8s']) {
         sh 'kubectl apply -f k8.yaml'
     }
   }

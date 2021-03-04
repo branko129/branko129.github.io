@@ -31,7 +31,7 @@ node {
   stage('Deploy to k8') {
       
         withKubeConfig([credentialsId: 'k8s']) {
-        sh 'kubectl apply -f k8.yaml'
+        sh 'ssh -o StrictHostKeyChecking=no root@192.168.9.55 kubectl apply -f /tmp/portal-gateway.yaml'
     }
   }
 }

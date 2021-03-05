@@ -30,7 +30,7 @@ node {
    
     stage('Deploy to k8') {
         kubernetesDeploy(
-          configs: 'manifest.yaml', 
+          configs: 'k8.yaml', 
           kubeconfigId: 'kube'
         )
        }
